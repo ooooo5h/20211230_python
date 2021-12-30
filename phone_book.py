@@ -204,6 +204,7 @@ def search_my_contact_list():
         
 # 연락처 수정
 ##### 파라미터로 왜 추가하는 지 모르겠음
+#>>>> 외부에서 필요한 데이터가 있을때! 내부에서 생성할 수 있는(ex input으로 받는 아이들) 애들이 아니라 외부에서부터 받아와야할때는 파라미터 재료 추가
 def update_contact(contact, value):
     # INSERT INTO 를 실행시키는 파이썬 코드와 유사함
     sql = f"UPDATE contacts SET contacts.name = '{value}' WHERE contacts.id = {contact.id} "
