@@ -77,3 +77,15 @@ def sign_in():
         print(f'{user_nickname}님 환영합니다.')   # 로그인에 성공한 사람의 닉네임이 뭔지 궁금하다
         sleep(2)
         return True
+
+        
+# 로그인 이후의 기능 메뉴
+def print_phone_book_menu():
+    print('===== 메인메뉴 =====')
+    print('1. 전화번호 추가 등록')
+    print('2. 전화번호 목록 조회')
+    print('0. 로그아웃')
+    print('===================')
+    
+    num = int(input('메뉴 선택 : '))
+    return num
