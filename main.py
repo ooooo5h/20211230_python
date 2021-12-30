@@ -3,7 +3,7 @@
 # DB연결 관련된 기타 기능 : phone_book.py 모듈 이용 예정
 
 from time import sleep
-from phone_book import print_main_menu, sign_up, sign_in, print_phone_book_menu
+from phone_book import add_phone_num, print_main_menu, sign_up, sign_in, print_phone_book_menu
 
 # 프로그램이 종료될 사유가 생길때까지 무한반복 시켜주기
 while True:
@@ -20,6 +20,9 @@ while True:
                     print('로그아웃 후 메인으로 돌아갑니다.')
                     sleep(2)
                     break
+                
+                if num == 1:
+                    add_phone_num()
                 
     elif menu_num == 2:
         sign_up()
