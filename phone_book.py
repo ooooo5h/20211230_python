@@ -128,7 +128,7 @@ def show_all_contacts():
     # 추가 input은 필요 없다
     
     # 1. SQL 작성 -> 내 연락처 목록 불러오는 쿼리
-    sql = f'SELECT * FROM contacts WHERE contacts.user_id = {login_user_id}'
+    sql = f'SELECT * FROM contacts WHERE contacts.user_id = {login_user_id} ORDER BY contacts.name'   #문제1 : 이름 가나다순으로 정렬
     
     # 2. cursor => 쿼리 실행/실행 결과를 별도의 tuple에 담자
     cursor.execute(sql)
