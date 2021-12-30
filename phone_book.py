@@ -176,3 +176,16 @@ def search_my_contact_list():
         
         # contact_num에 맞는 line을 가지고 => (dict가 나옴) Contact 형태의 객체로 변환(클래스 활용)
         contact = Contact()    # 임시로, 기본값만 가지고 있는 연락처를 생성했다
+        
+        # 위치에 맞는 dict 꺼내오자 => dict의 내용을 가지고 contact객체의 내용물변수들을 채워주자
+        #(클래스의 메쏘드를 추가하는 작업으로 대체하자 너무 반복되니까)
+        select_line = result[contact_num-1]   # 위치에 맞는 dict 꺼내오는 작업
+        
+        contact.set_data(select_line)    # dict형태를 가지고, 클래스 인스턴스 만든 예제
+        
+        # cf) 클래스 객체를 가지고, dict로 변환해야하는 경우도 많다.
+        # ==> 이 때도 메쏘드로 만들고 활용하자(향후 체험 예정)
+        
+        # 데이터 세팅 성공 여부 확인
+        print(contact.name)
+        
