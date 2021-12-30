@@ -42,3 +42,22 @@ def sign_up():
     
     print('회원가입이 완료되었습니다. 메인화면으로 돌아갑니다.')
     sleep(2)
+    
+# 로그인 (sing in) 기능
+# : 아이디/비밀번호를 입력받고, DB에 등록된 정보인지 검색한 후 결과는 TRUE/FALSE로 리턴하자
+def sign_in():
+    input_email = input('이메일 : ')
+    input_pw = input('비밀번호 : ')
+    
+    # email,pw가 모두 맞는 회원이 있나 조회하기 => SELECT쿼리
+    sql = f"SELECT * FROM users WHERE users.email = '{input_email}' AND users.password = '{input_pw}'"
+    
+    # SELECT 쿼리를 실행해보자
+    cursor.execute(sql)
+    
+    # cursor에는 실행 결과가 표로 담겨있는데, tuple로 변환해보자
+    user_list = cursor.fetchall()
+    
+    # 반복문을 돌면서 내용 확인
+    for user in user_list:
+        print(user)
