@@ -190,18 +190,25 @@ def search_my_contact_list():
         # print(contact.name)
         
         # 연락처의 상세 정보 표시 (메쏘드로 만들어서 활용하자)
-        detail_num = contact.show_detail_info()    
+        detail_num = contact.show_detail_info()    ##### 0번 누르면 이전 메뉴로 돌아가는 코드를 안짰는데 어떻게 알아서 이전메뉴로 돌아가니???
         
+        ##### 코드는 위에서 부터 아래로 실행.. 나중에 작성한 함수를 위에서 호출도 가능한가..??
         if detail_num == 1:
-            update_contact()
+            new_name = input('변경할 이름 :')
+            update_contact(contact, new_name)
         elif detail_num == 2:
             delete_contact()
       
         
-    # 연락처 수정
-    def update_contact(self):
-        pass
+# 연락처 수정
+def update_contact(contact, value):
+    # INSERT INTO 를 실행시키는 파이썬 코드와 유사함
+    sql = f"UPDATE contacts SET contacts.name = '{value}' WHERE contacts.id = {contact.id} "
+
+    cursor.execute(sql)  # 어떤 변경사항이 있을 지를 알려줌
+    db_connect.commit()  # 변경사항들 실제 반영    
     
-    # 연락처 삭제
-    def delete_contact(self):
-        pass
+    
+# 연락처 삭제
+def delete_contact(self):
+    pass

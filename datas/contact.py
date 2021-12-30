@@ -4,6 +4,7 @@
 class Contact:
     def __init__(self):
         # 객체 변수 생성해서, 기본값들만 대입을 해보자
+        ###### 기본값 설정이 파라미터에 대입하는 것도 있었는데 뭐가 다른건가...?
         self.id = 0      # 임시로 int인 0으로 대입(나중에 int가 올거라 암시)
         self.user_id = 0
         self.name = ''
