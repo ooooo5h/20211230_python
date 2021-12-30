@@ -162,8 +162,12 @@ def search_my_contact_list():
         print('검색 결과가 없습니다.')
         sleep(2)
     else:
-        # 검색 결과 확인
-        for row in result:
-            print(row)     # 각각 한 줄은 dict형태로 받아옴
+        
+        print('===== 검색결과 =====')
+        # 검색 결과 확인 => 1. 이름(메모) ... 4. 이름4(메모4)
+        for idx, row in enumerate (result):         # enumerate함수는 인덱스값과 데이터값 동시에 리턴
+            line = f"{idx+1}.{row['name']} ({row['memo']})"
+            print(line)
             
-        sleep(2)
+        # 몇번 연락처를 상세보기 할건지?
+        contact_num = int(input('상세 보기 연락처 선택 : '))
