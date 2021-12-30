@@ -23,3 +23,17 @@ def print_main_menu():
     
     menu_num = int(input('메뉴 선택 : '))
     return menu_num
+
+# 회원가입 실행하는 함수 -> DB에 쿼리를 날리자
+# 회원가입은 users라는 테이블에, 회원정보가 담긴 row를 추가하자 => INSERT INTO 쿼리 활용
+def sign_up():
+    input_email = input('가입 이메일 : ')
+    input_password = input('사용할 비밀번호 : ')
+    input_nickname = input('닉네임 : ')
+    
+    # INSERT INTO 쿼리의 VALUES에 집어넣자
+    # f string으로 실제 입력된 내용을 쿼리에 반영시키고 싶은 데
+    # SQL (쿼리)를 짤 때, 'string'형태로 처리를 해야하는 일이 빈번함으로 f"문장" 형태로, " "로 감싸주기!!!
+    sql = f"INSERT INTO users (users.email, users.password, users.nickname) VALUES ('{input_email}', '{input_password}', '{input_nickname}')"
+    
+    print(sql)
