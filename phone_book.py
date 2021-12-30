@@ -69,6 +69,11 @@ def sign_in():
         return False
     else:
         # 아이디/비밀번호 일치하는 회원 발견했으니 성공으로 처리
-        print(f'로그인에 성공했습니다.')
+        # user_list에서는 0번째 아이템이 로그인에 성공한 사람의 정보
+        
+        login_user = user_list[0]   # 최소한 0번째는 있을 것이다.
+        # print(login_user)           # 로그인 사용자 정보를 , tuple로 모든 정보를 들고 있음
+        user_nickname = login_user[3]     # 사용자 정보 튜플에서 닉네임을 추출했다
+        print(f'{user_nickname}님 환영합니다.')   # 로그인에 성공한 사람의 닉네임이 뭔지 궁금하다
         sleep(2)
         return True
