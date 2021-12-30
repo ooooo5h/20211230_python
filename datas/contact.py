@@ -31,4 +31,5 @@ class Contact:
         print('2. 연락처 삭제')
         print('0. 이전 메뉴로 돌아가기')
         print('===========================')
-        return int(input('추가 행동 선택 : '))
+        return int(input('추가 행동 선택 : '))   
+
