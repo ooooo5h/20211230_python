@@ -20,3 +20,14 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 # users에 모든 데이터를 SELECT로 확인해보자(예시)
+
+# 어떤 쿼리를 날릴지를 sql 변수에 저장
+sql = f'SELECT * FROM users'
+cursor.execute(sql)  # cursor에 쿼리 실행 결과(표)가 저장되게 됨
+
+# 저장된 내용을 파이썬에서 다루기 쉬운 tuple형태로 전환해주는데, 그걸 변수에 담기
+query_result_list = cursor.fetchall()
+
+# 받아낸 목록을 반복문으로 하나씩 출력
+for row in query_result_list:
+    print(row)
