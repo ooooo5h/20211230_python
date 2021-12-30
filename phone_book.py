@@ -148,12 +148,13 @@ def show_all_contacts():
     
     
 # 전화번호부에서, 이름 기준으로 검색
+# 문제 2 : 검색기능 강화 => 이름/폰번/메모 중 내용이 포함되면 목록으로 추가하자
 def search_my_contact_list():
-    input_keyword = input('검색할 이름의 일부를 입력 : ')  
+    input_keyword = input('검색할 키워드 입력 : ')  
     
-    # 이름에 input_keyword를 포함하고있는 (내가 가진) 모든 연락처 목록을 조회
-    sql = f"SELECT * FROM contacts WHERE contacts.user_id = {login_user_id} AND contacts.name LIKE '%{input_keyword}%'"
-    # print('완성된 쿼리 : ', sql)
+    # 이름/폰번/메모에 input_keyword를 포함하고있는 (내가 가진) 모든 연락처 목록을 조회
+    sql = f"SELECT * FROM contacts WHERE contacts.user_id = {login_user_id} AND contacts.name, contacts.phone_num, contacts.memo LIKE '%{input_keyword}%'"
+    print('완성된 쿼리 : ', sql)
     
     # DB에서 쿼리 실행 -> 결과 출력
     cursor.execute(sql)
