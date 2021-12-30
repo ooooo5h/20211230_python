@@ -187,5 +187,7 @@ def search_my_contact_list():
         # ==> 이 때도 메쏘드로 만들고 활용하자(향후 체험 예정)
         
         # 데이터 세팅 성공 여부 확인
-        print(contact.name)
+        # print(contact.name)
         
+        # 연락처의 상세 정보 표시 (메쏘드로 만들어서 활용하자)
+        detail_num = contact.show_detail_info()
