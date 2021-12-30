@@ -197,10 +197,11 @@ def search_my_contact_list():
             new_name = input('변경할 이름 :')
             update_contact(contact, new_name)
         elif detail_num == 2:
-            delete_contact()
+            delete_contact(contact)
       
         
 # 연락처 수정
+##### 파라미터로 왜 추가하는 지 모르겠음
 def update_contact(contact, value):
     # INSERT INTO 를 실행시키는 파이썬 코드와 유사함
     sql = f"UPDATE contacts SET contacts.name = '{value}' WHERE contacts.id = {contact.id} "
@@ -208,7 +209,17 @@ def update_contact(contact, value):
     cursor.execute(sql)  # 어떤 변경사항이 있을 지를 알려줌
     db_connect.commit()  # 변경사항들 실제 반영    
     
-    
+    print('연락처 수정이 완료되었습니다.')
+    sleep(2)
+        
 # 연락처 삭제
-def delete_contact(self):
-    pass
+###### del 이해 못했음
+def delete_contact(contact):
+    # 선택한 연락처만 DELETE문으로 지우는 용도로 실행
+    sql = f"DELETE FROM contacts WHERE contacts.id = {contact.id}"
+    
+    cursor.execute(sql)
+    db_connect.commit()
+    
+    print('연락처 삭제가 완료되었습니다.')
+    sleep(2)
