@@ -194,6 +194,7 @@ def search_my_contact_list():
         detail_num = contact.show_detail_info()    ##### 0번 누르면 이전 메뉴로 돌아가는 코드를 안짰는데 어떻게 알아서 이전메뉴로 돌아가니???
         
         ##### 코드는 위에서 부터 아래로 실행.. 나중에 작성한 함수를 위에서 호출도 가능한가..??
+        #>>>> 만들어둔 함수 자체를 main에서 불러냈고, 함수 내에서는 다른 함수 호출은 문제없이 실행가능함 설명들었는데 정확히 정리는 못하겠네 하지만 된다고알아들음..(??)
         if detail_num == 1:
             new_name = input('변경할 이름 :')
             update_contact(contact, new_name)
